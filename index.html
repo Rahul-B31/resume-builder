@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container" id="cv-form">
+    <h1 class="text-center my-2">Resume Generator</h1>
+<p class="text-center my-2">By Rahul Barhate</p>
+<div class="row">
+    <div class="col-md-6">
+       <h3>personal information</h3>
+    <div class="form group mt-2">
+        <label for="namefiled">Your Name</label>
+        <input type="text" class="form-control" id="namefiled" placeholder="Enter here">
+    </div>
+     <div class="form group mt-2">
+        <label for="contactfiled">Your contact</label>
+        <input type="text" class="form-control" id="contactfiled" placeholder="Enter here">
+    </div>
+
+
+    <div class="form group">
+        <label for="addressfiled">Your Address</label>
+        <textarea class="form-control" id="addressfiled"
+         placeholder="Enter here"
+         rows="3"
+         ></textarea>
+    </div>
+            <div class="form-group">
+                <label for="imgfiled">Select Your Photo</label>
+                 <input type="file"class="form-control mt-2" id="imgfiled">
+            </div>
+    <p class="text-secondary">Important Links</p>
+
+       <div class="form group">
+          <label for="linkedfiled">Linkedin </label>
+          <input type="text" class="form-control" id="linkedfiled" placeholder="Enter here">
+      </div>
+
+
+      <div class="form group">
+          <label for="githubfiled">GitHub</label>
+        <input type="text" class="form-control" id="githubfiled" placeholder="Enter here">
+      </div>
+
+
+    <div class="form group mt-2">
+        <label for="instafiled">Instagram</label>
+        <input type="text" class="form-control" id="instafiled" placeholder="Enter here">
+    </div>
+
+    </div>
+    <div class="col-md-6">
+ <h3>Professional Inforamation</h3>
+
+ <div class="form group mt-2">
+    <label for="">Objective</label>
+    <textarea class="form-control"   
+     placeholder="Enter here"
+     id="objectivefiled"
+     rows="3"
+     ></textarea>
+    
+</div>
+
+<div class="form group mt-2 "id="WE">
+    <label for="">Work Experience</label>
+    <textarea class="form-control wefiled"   
+     placeholder="Enter here"
+       id=""
+     rows="3"
+     ></textarea>
+
+     <!-- new text area -->
+
+     <div class="container text-center mt-3"id="weAddBut">
+      <button onclick="addWeFiled()" class="btn btn-primery btn-sm" style="background-color:rgb(108, 186, 224);" >ADD</button>
+        <div id="btncontainer-">
+            <button onclick="deletechild()" class="btn btn-primery btn-sm" style="background-color:rgb(108, 186, 224);" >Delete Filed</button>
+        </div>
+      
+     </div>
+     
+</div>
+
+
+ 
+
+<div class="form group mt-2" id="AQ">
+    <label for="">Acadamic Qualification</label>
+    <textarea class="form-control aqfiled mt-2"   
+     placeholder="Enter here"
+     
+     rows="3"
+     ></textarea>
+
+     <!-- new1 text goes here -->
+     <div class="container text-center mt-3 "id="aqAddBut">
+        <button onclick="addAcademicqualifiaction()" class="btn btn-primery btn-sm" style="background-color:rgb(108, 186, 224);" >ADD</button>
+     </div>
+</div>
+
+ </div>
+</div>
+<div class="container text-center mt-3 mb-2">
+   <button onclick="generateCV()" class=" button.btn.btn-primery-btn-lg" style="background-color:rgb #e2e2e2;">Generator CV</button>
+</div>
+</div>
+
+
+<!-- cv template -->
+<div class="container"id="cv-template">
+    <div class="row">
+        <div class="col-md-4 text-center py-3 background">
+           <!-- first col -->
+           <img src="https://cdn-icons-png.flaticon.com/512/1053/1053244.png?w=360" alt=""class="img-fluid my-img" id="imgTemplate">
+           <div class="container">
+            <p id="nameTemplate">Rahul Barhate</p>
+            <p id="contactTemplate">+919665546013</p>
+            <p id="addressTemplate">at post salbardi tal :muktainagar</p>
+            <hr/>
+            <p><a href="#1" id="linkedinTemplate" target="_blank">https://www.Linkedin.com/rahul-barhate</a></p>
+            <p><a href="#2" id="githubTemplate" target="_blank">https://www.GitHub.com/barhate-rahul</a></p>
+            <p><a href="#3" id="instaTemplate" target="_blank">https://www.instagram.com/rahul-barhate</a></p>
+           </div>
+        </div>
+
+  
+        <div class="col-md-8 py-3">
+          <!-- second col -->
+          <h1 class=""id="nameTemplate2" style="font-weight:980;">Rahul Barhate</h1>
+          <!-- objective card -->
+          <div class="card mt-3">
+            <div class="card-header" style="background-color:rgb(134, 232, 232);">    <!-- bootstrap-->
+                <h3>Objective</h3>
+
+            </div>
+            <div class="card-body">
+                <p id="objectiveTemplate">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum laboriosam consectetur nobis exercitationem doloribus minus quam animi consequatur explicabo! Aliquid amet ratione perspiciatis inventore accusantium fuga ipsam id dolores, velit excepturi quis hic. Blanditiis dicta rerum quam, assumenda exercitationem soluta sit optio eaque non totam inventore asperiores earum sequi dignissimos?</p>
+            </div>
+          </div>
+
+          <!-- work Experience card -->
+        
+              <div class="card mt-3">
+                <div class="card-header "style="background-color:rgb(134, 232, 232);">    <!-- bootstrap-->
+                    <h3>Work Experience</h3>
+    
+                </div>
+                <div class="card-body">
+                 <ul id="workExperienceTemplate">
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, deserunt?</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, deserunt?</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, deserunt?</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, deserunt?</li>
+                 </ul>
+                </div>
+              </div>
+
+
+              <!-- Acandemic Qualification -->
+
+              <div class="card mt-3">
+                <div class="card-header" style="background-color:rgb(134, 232, 232);">    <!-- bootstrap-->
+                    <h3>Academic Qualification</h3>
+    
+                </div>
+                <div class="card-body">
+                 <ul id="academicQualificationTemplate">
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, deserunt?</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, deserunt?</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, deserunt?</li>
+                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, deserunt?</li>
+                 </ul>
+                </div>
+              </div>
+            
+                    <div class="container text-center mt-3">
+                        <button onclick="printCV()" class="btn background" style="background-color:#e2e2e2;">Print</button>
+                    </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>    
+<script src="script.js"></script>
+<script>
+const addWeFiled = ()=>{
+    // console.log("add new filed")
+    let node = document.createElement('textarea');
+    node.classList.add('form-control')
+    node.classList.add('wefiled')
+    node.classList.add('mt-2')
+    node.classList.add('delete')
+    node.setAttribute('placeholder','Enter here')
+    node.setAttribute('rows',3)
+
+    let weAddBut = document.getElementById('weAddBut');
+    let WEob = document.getElementById('WE');
+    WEob.insertBefore(node,weAddBut)
+
+}
+const deletechild = ()=>{
+    let we = document.getElementById('WE');
+    delNode = document.getElementsByClassName('delete');
+    we.removeChild(delNode[0]);
+
+}
+const addAcademicqualifiaction = () =>{
+    let node = document.createElement('textarea');
+    node.classList.add('form-control')
+    node.classList.add('aqfiled')
+    node.classList.add('mt-2')
+    node.setAttribute('rows',3)
+    node.setAttribute('placeholder','Enter here');
+
+    let AQob = document.getElementById('AQ');
+    let aqAddBut = document.getElementById('aqAddBut');
+    AQob.insertBefore(node,aqAddBut);
+
+
+}
+</script>    
+</body>
+</html>
